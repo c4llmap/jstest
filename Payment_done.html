@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>결제완료화면</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap&subset=korean" rel="stylesheet">
+  <style type="text/css">
+    body {
+      height: 100%;
+      width: 100%;
+      background-color: #79BEA8;
+      font-family: "Nanum Gothic", sans-serif;
+    }
+
+    #topMenu,
+    #bottomMenu {
+      background-color: grey;
+      height: 30px;
+      position: fixed;
+      right: 8px;
+      left: 8px;
+    }
+
+    #bottomMenu {
+      position: fixed;
+      bottom: 8px;
+    }
+
+    #topMenu button,
+    #bottomMenu button {
+      position: absolute;
+
+      top: 3px;
+    }
+
+    #topMenu button {
+      position: absolute;
+      right: 0;
+    }
+
+    #topMenu p {
+      position: absolute;
+      right: 0;
+      margin: 0;
+      top: 4.5px;
+    }
+
+    section {
+      position: absolute;
+      top: 38px;
+      bottom: 38px;
+      right: 8px;
+      left: 8px;
+    }
+
+    #businfoDibv{
+      border: 3px solid black;
+      background-color: white;
+      width: 60%;
+      padding: 10px;
+    }
+
+    td{
+      font-weight: bold;
+    }
+
+    body{
+     text-align: center;
+     margin: 0 auto;
+    }
+
+    div{
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    button{
+      background-color: rgba(0,0,0,0);
+      background-color: #E7F3EF;
+      border: 2px solid #23483C;
+      color: #23483C;
+      border-radius: 5%;
+      font-size: 15px;
+      font-style: bold;
+    }
+    /* 기본 레이아웃 및 상단바 하단바*/
+  </style>
+</head>
+
+<body>
+  <div id="topMenu"></div>
+  <section>
+    <p><strong>선택하신 버스의 예매가 완료되었습니다!</strong></p>
+    <div id = "businfoDibv">
+    <table id = "doneBusInfo">
+      <tr><td>버스번호: </td><td id="busID"></td></tr>
+      <tr><td>출발일: </td><td id="departDay"></td></tr>
+      <tr><td>출발시각: </td><td id="departTime"></td></tr>
+      <tr><td>출발지-도착지: </td><td id="place"></td></tr>
+    </table>
+    </div>
+    <br/><p><strong>도착지 <span id="to"></span>에 대한 관광명소 추천을 받으시겠습니까?</strong></p>
+    <br/><button id = "recoNo" onclick = "no()">아니오</button>&nbsp;&nbsp;&nbsp;
+          <button id = "recoYes">예</button>
+    <div id="attractionInfo">
+    </div>
+  </section>
+  <div id="bottomMenu"></div>
+  <script src="checkLogin.js"></script>
+  <script src="Attractions.js"></script>
+  <script src="Payment_done.js"></script>
+</body>
+
+</html>

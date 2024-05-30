@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>예매 확인/취소</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap&subset=korean" rel="stylesheet">
+  <style type="text/css">
+    body {
+      height: 100%;
+      width: 100%;
+      background-color: #79BEA8;
+      font-family: "Nanum Gothic", sans-serif;
+    }
+
+    #topMenu,
+    #bottomMenu {
+      background-color: grey;
+      height: 30px;
+      position: fixed;
+      right: 8px;
+      left: 8px;
+    }
+
+    #bottomMenu {
+      position: fixed;
+      bottom: 8px;
+    }
+
+    #topMenu button,
+    #bottomMenu button {
+      position: absolute;
+
+      top: 3px;
+    }
+
+    #topMenu button {
+      position: absolute;
+      right: 0;
+    }
+
+    #topMenu p {
+      position: absolute;
+      right: 0;
+      margin: 0;
+      top: 4.5px;
+    }
+
+    section {
+      position: absolute;
+      top: 38px;
+      bottom: 38px;
+      right: 8px;
+      left: 8px;
+    }
+
+    body{
+      text-align: center;
+    }
+    button{
+      background-color: rgba(0,0,0,0);
+      background-color: #E7F3EF;
+      border: 2px solid #23483C;
+      color: #23483C;
+      border-radius: 5%;
+      font-size: 15px;
+      font-style: bold;
+    }
+
+    /* 기본 레이아웃 및 상단바 하단바*/
+  </style>
+</head>
+
+<body>
+  <div id="topMenu"></div>
+  <div id="bottomMenu"></div>
+  <section>
+    <h1><u id="userName"></u>님의 예약 내역</h1>
+    <ul id="reservedBusList"></ul>
+  </section>
+  <script src="checkLogin.js"></script>
+  <script src="checkReserved.js"></script>
+</body>
+
+</html>

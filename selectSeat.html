@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>좌석 선택</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap&subset=korean" rel="stylesheet">
+  <style type="text/css">
+    body {
+      height: 100%;
+      width: 100%;
+      background-color: #79BEA8;
+      font-family: "Nanum Gothic", sans-serif;
+    }
+
+    #topMenu,
+    #bottomMenu {
+      background-color: grey;
+      height: 30px;
+      position: fixed;
+      right: 8px;
+      left: 8px;
+    }
+
+    #bottomMenu {
+      position: fixed;
+      bottom: 8px;
+    }
+
+    #topMenu button,
+    #bottomMenu button {
+      position: absolute;
+
+      top: 3px;
+    }
+
+    #topMenu button {
+      position: absolute;
+      right: 0;
+    }
+
+    #topMenu p {
+      position: absolute;
+      right: 0;
+      margin: 0;
+      top: 4.5px;
+    }
+
+    section {
+      position: absolute;
+      top: 38px;
+      bottom: 38px;
+      right: 8px;
+      left: 8px;
+    }
+
+    /* 기본 레이아웃 및 상단바 하단바*/
+
+    table,
+    td {
+      border-collapse: collapse;
+    }
+
+    td {
+      height: 50px;
+      width: 50px;
+    }
+
+    td:not(.empty) {
+      border: 1px solid black;
+    }
+
+    body {
+      text-align: center;
+    }
+
+    button {
+      background-color: rgba(0, 0, 0, 0);
+      background-color: #E7F3EF;
+      border: 2px solid #23483C;
+      color: #23483C;
+      border-radius: 5%;
+      font-size: 15px;
+      font-style: bold;
+    }
+
+    .occupied {
+      background-color: grey;
+    }
+
+    .selected {
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="topMenu"></div>
+  <section>
+    <div id="busSeat">
+      <table>
+        <tbody>
+          <tr>
+            <td id="seat1"></td>
+            <td id="seat2"></td>
+            <td class="empty"></td>
+            <td id="seat3"></td>
+            <td id="seat4"></td>
+          </tr>
+          <tr>
+            <td id="seat5"></td>
+            <td id="seat6"></td>
+            <td class="empty"></td>
+            <td id="seat7"></td>
+            <td id="seat8"></td>
+          </tr>
+          <tr>
+            <td id="seat9"></td>
+            <td id="seat10"></td>
+            <td class="empty"></td>
+            <td id="seat11"></td>
+            <td id="seat12"></td>
+          </tr>
+          <tr>
+            <td id="seat13"></td>
+            <td id="seat14"></td>
+            <td class="empty"></td>
+            <td id="seat15"></td>
+            <td id="seat16"></td>
+          </tr>
+          <tr>
+            <td id="seat17"></td>
+            <td id="seat18"></td>
+            <td class="empty"></td>
+            <td id="seat19"></td>
+            <td id="seat20"></td>
+          </tr>
+          <tr>
+            <td id="seat21"></td>
+            <td id="seat22"></td>
+            <td class="empty"></td>
+            <td id="seat23"></td>
+            <td id="seat24"></td>
+          </tr>
+          <tr>
+            <td id="seat25"></td>
+            <td id="seat26"></td>
+            <td class="empty"></td>
+            <td id="seat27"></td>
+            <td id="seat28"></td>
+          </tr>
+          <tr>
+            <td id="seat29"></td>
+            <td id="seat30"></td>
+            <td class="empty"></td>
+            <td id="seat31"></td>
+            <td id="seat32"></td>
+          </tr>
+          <tr>
+            <td id="seat33"></td>
+            <td id="seat34"></td>
+            <td class="empty"></td>
+            <td id="seat35"></td>
+            <td id="seat36"></td>
+          </tr>
+          <tr>
+            <td id="seat37"></td>
+            <td id="seat38"></td>
+            <td class="empty"></td>
+            <td id="seat39"></td>
+            <td id="seat40"></td>
+          </tr>
+          <tr>
+            <td id="seat41"></td>
+            <td id="seat42"></td>
+            <td id="seat43"></td>
+            <td id="seat44"></td>
+            <td id="seat45"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="">
+      <form class="" action="index.html" method="post">
+        <label for="adult">어른</label>
+        <input type="number" id="adult" value="0" min="0">
+        <label for="child">어린이</label>
+        <input type="number" id="child" value="0" min="0">
+
+        <p>선택 좌석수 : <span id="All_Seats"></span>개</p>
+        <p>총액 : <span id="amount"></span>원</p>
+
+        <button type="button" id="payment">결제</button>
+      </form>
+      <p>! 인원을 먼저 입력하고, 좌석을 선택해주세요.</p>
+    </div>
+  </section>
+  <div id="bottomMenu"></div>
+  <script src="checkLogin.js"></script>
+  <script src="selectSeat.js"></script>
+</body>
+
+</html>

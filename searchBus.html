@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>버스 조회</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap&subset=korean" rel="stylesheet">
+  <style type="text/css">
+    body {
+      height: 100%;
+      width: 100%;
+      background-color: #79BEA8;
+      font-family: "Nanum Gothic", sans-serif;
+    }
+
+    #topMenu,
+    #bottomMenu {
+      background-color: grey;
+      height: 30px;
+      position: fixed;
+      right: 8px;
+      left: 8px;
+    }
+
+    #bottomMenu {
+      position: fixed;
+      bottom: 8px;
+    }
+
+    #topMenu button,
+    #bottomMenu button {
+      position: absolute;
+
+      top: 3px;
+    }
+
+    #topMenu button {
+      position: absolute;
+      right: 0;
+    }
+
+    #topMenu p {
+      position: absolute;
+      right: 0;
+      margin: 0;
+      top: 4.5px;
+    }
+
+    section {
+      position: absolute;
+      top: 38px;
+      bottom: 38px;
+      right: 8px;
+      left: 8px;
+    }
+
+    /* 기본 레이아웃 및 상단바 하단바*/
+
+    section h1 {
+      text-align: center;
+    }
+
+    table,
+    td,
+    th {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    body {
+      text-align: center;
+    }
+
+    button {
+      background-color: rgba(0, 0, 0, 0);
+      background-color: #E7F3EF;
+      border: 2px solid #23483C;
+      color: #23483C;
+      border-radius: 5%;
+      font-size: 15px;
+      font-style: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="topMenu"></div>
+  <section>
+    <h1>조회하고 싶은 버스의 정보를 입력해주세요!</h1>
+    <label for="to">출발지 : </label>
+    <input type="text" id="to" value="" autofocus>
+    <label for="from">목적지 : </label>
+    <input type="text" id="from" value="">
+    <input type="button" id="search" value="조회">
+
+    <table>
+      <thead>
+        <tr>
+          <th>버스 번호</th>
+          <th>일자</th>
+          <th>시간</th>
+          <th>잔여좌석</th>
+        </tr>
+      </thead>
+      <tbody id="busResult"></tbody>
+    </table>
+  </section>
+  <div id="bottomMenu"></div>
+  <script src="searchBus.js"></script>
+  <script src="checkLogin.js"></script>
+</body>
+
+</html>
