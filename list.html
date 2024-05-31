@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <!--meta name="viewport" content="width=device-width, initial-scale=1.0"-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
     <style>
         body, html{
@@ -37,12 +38,13 @@
             text-align: center;
             z-index: 1;
             padding-left: 30%;
+            width: auto;
         }
 
         /*robot container*/
     #robot-container {
             position: relative;
-            width: 75px;
+            width: auto;
             height: 75px;
             align-items: center;
             text-align: center;
@@ -62,6 +64,8 @@
             background-color: #fff;
             border-radius: 11.5px;
             padding: 10px;
+            margin-top:35%;
+            margin-left: 10%;
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.9);
             max-width: 200px;
             visibility: hidden;
@@ -69,6 +73,39 @@
             transition: opacity 0.3s ease;
             text-align: center;
         }
+
+        .wrapper {
+        border-radius: 2px;
+        box-sizing: border-box;
+        text-align: center;
+
+    }
+
+    .input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #000;
+        color: #000;
+        box-sizing: border-box;
+        font-family: 'Arvo';
+        font-size: 18px;
+        height: 50px;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    input::placeholder {
+        color: rgba(0, 0, 0, 0.7);
+    }
+
+    input:focus::placeholder {
+        color: dodgerblue;
+    }
+
+    .input:focus+.underline {
+        transform: scale(1);
+    }
 
         @keyframes fadeIn {
             0% { opacity: 0; }
@@ -79,6 +116,16 @@
             visibility: visible;
             animation: fadeIn 0.5s ease forwards;
         }
+
+        @media screen and (max-width: 767px) {
+        .input {
+            font-size: 18px;
+        }
+
+        .wrapper {
+            width: 90%;
+        }
+    }
     </style>
 </head>
 <body>
@@ -530,7 +577,11 @@
         <!--robot 이미지 넣는 곳-->
         <div class="center-content">
             <div id="robot-container">
-                <img id="robot-image" src="robot.png" alt="Robot">
+                <img id="robot-image" src="robot.png" style="width: 75px;" alt="Robot">
+                <div class="wrapper" style="margin-bottom:-65px;">
+                    <input class="input" placeholder="백석대 <=> 잠실역" type="text" id="destination-input">
+                    <span class="underline"></span>
+                </div>
                 <div class="speech-bubble" id="speech-bubble"></div>
             </div>
         </div>
@@ -538,22 +589,24 @@
     <script>
         /*robot container*/
         const robotImage = document.getElementById('robot-image');
-    const speechBubble = document.getElementById('speech-bubble');
-    const sentences = [
-        '',
-        '오늘은 목요일 입니다.',
-    ];
+        const speechBubble = document.getElementById('speech-bubble');
+        const sentences = [
+            '',
+            '오늘은 목요일 입니다.',
+            '백석대에서 <=> 잠실역',
+            '노선도 입니다.',
+        ];
 
-    let index = 0;
+        let index = 0;
 
-    setInterval(() => {
-        speechBubble.classList.remove('show');
-        setTimeout(() => {
-            index = (index + 1) % sentences.length;
-            speechBubble.innerText = sentences[index];
-            speechBubble.classList.add('show');
-        }, 500);
-    }, 2500);
-    </script>
+        setInterval(() => {
+            speechBubble.classList.remove('show');
+            setTimeout(() => {
+                index = (index + 1) % sentences.length;
+                speechBubble.innerText = sentences[index];
+                speechBubble.classList.add('show');
+            }, 500);
+        }, 2500);
+        </script>
 </body>
 </html>
